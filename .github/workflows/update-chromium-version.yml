@@ -1,0 +1,49 @@
+name: Update Chromium Version
+
+on:
+  schedule:
+    - cron: '0 2 * * 1'  # Every Monday at 02:00 UTC
+  workflow_dispatch:      # Allow manual trigger
+
+permissions:
+  contents: write
+
+jobs:
+  update-version:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Get latest version from Docker Hub
+        id: get-latest
+        run: |
+          LATEST_VERSION=$(curl -s "https://hub.docker.com/v2/repositories/jlesage/chromium/tags/?page_size=1&ordering=last_updated" | jq -r '.results[0].name')
+          echo "latest_version=${LATEST_VERSION}" >> $GITHUB_OUTPUT
+          echo "Latest version: ${LATEST_VERSION}"
+
+      - name: Get current version from Dockerfile
+        id: get-current
+        run: |
+          CURRENT_VERSION=$(grep -oP 'jlesage/chromium:v\K[\d.]+' chromium/Dockerfile)
+          CURRENT_VERSION="v${CURRENT_VERSION}"
+          echo "current_version=${CURRENT_VERSION}" >> $GITHUB_OUTPUT
+          echo "Current version: ${CURRENT_VERSION}"
+
+      - name: Update Dockerfile if newer version exists
+        run: |
+          LATEST="${{ steps.get-latest.outputs.latest_version }}"
+          CURRENT="${{ steps.get-current.outputs.current_version }}"
+          
+          if [ "${LATEST}" != "${CURRENT}" ]; then
+            echo "New version available: ${LATEST} (current: ${CURRENT})"
+            sed -i "s|jlesage/chromium:${CURRENT}|jlesage/chromium:${LATEST}|g" chromium/Dockerfile
+            
+            git config user.name "github-actions[bot]"
+            git config user.email "github-actions[bot]@users.noreply.github.com"
+            git add chromium/Dockerfile
+            git commit -m "chore: update jlesage/chromium to ${LATEST}"
+            git push
+          else
+            echo "Already up to date: ${CURRENT}"
+          fi
