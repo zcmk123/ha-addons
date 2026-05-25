@@ -1,5 +1,7 @@
 # DoubleBird 的 Home Assistant 插件仓库
 
+[English](./README.md)
+
 这个仓库包含由 DoubleBird 维护的 Home Assistant 加载项（Add-ons）。
 
 ## 安装方法

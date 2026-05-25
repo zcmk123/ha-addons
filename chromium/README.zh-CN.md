@@ -1,5 +1,7 @@
 # Chromium（Home Assistant 加载项）
 
+[English](./README.md)
+
 通过 Web 图形界面使用 Chromium 浏览器（支持 Ingress）。本加载项基于 `jlesage/chromium` 容器镜像。
 
 ## 使用方法

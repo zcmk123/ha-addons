@@ -1,5 +1,7 @@
 # Chromium (Home Assistant Add-on)
 
+[中文说明](./README.zh-CN.md)
+
 Chromium browser exposed through a web-based GUI (Ingress supported). This add-on is based on the `jlesage/chromium` container image.
 
 ## Usage

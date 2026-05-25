@@ -1,5 +1,7 @@
 # DoubleBird's Home Assistant Add-ons
 
+[中文说明](./README.zh-CN.md)
+
 This repository contains Home Assistant add-ons maintained by DoubleBird.
 
 ## Installation
