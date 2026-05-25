@@ -27,8 +27,8 @@ audio: true
 legacy: true
 options:
   UMASK: "0022"
-  LANG: "zh_CN.UTF-8"
-  TZ: "Asia/Shanghai"
+  LANG: "en_US.UTF-8"
+  TZ: "Etc/UTC"
   APP_NICENESS: "0"
   INSTALL_PACKAGES: ""
   PACKAGES_MIRROR: ""
