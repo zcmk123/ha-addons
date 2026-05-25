@@ -1,0 +1,94 @@
+configuration:
+  UMASK:
+    name: Umask
+    description: 新建文件/文件夹的权限掩码（八进制）。
+  LANG:
+    name: 语言环境
+    description: 容器语言环境（例如 zh_CN.UTF-8）。
+  TZ:
+    name: 时区
+    description: 容器使用的时区。
+  APP_NICENESS:
+    name: 进程优先级
+    description: 应用进程 niceness（-20..19）。负值需要额外权限。
+  INSTALL_PACKAGES:
+    name: 安装包列表
+    description: 启动时安装的包列表（空格分隔）。
+  PACKAGES_MIRROR:
+    name: 软件源镜像
+    description: 安装包时使用的软件源镜像地址。
+  CONTAINER_DEBUG:
+    name: 调试日志
+    description: 设为 1 时开启调试日志。
+  DISPLAY_WIDTH:
+    name: 显示宽度
+    description: 应用窗口宽度（像素）。
+  DISPLAY_HEIGHT:
+    name: 显示高度
+    description: 应用窗口高度（像素）。
+  DARK_MODE:
+    name: 深色模式
+    description: 设为 1 时开启深色模式。
+  WEB_AUDIO:
+    name: 网页音频
+    description: 设为 1 时，通过网页界面播放音频。
+  WEB_FILE_MANAGER:
+    name: 网页文件管理器
+    description: 设为 1 时开启网页文件管理器。
+  WEB_FILE_MANAGER_ALLOWED_PATHS:
+    name: 文件管理器允许路径
+    description: 允许访问的路径（逗号分隔），AUTO 为常用目录，ALL 为不限制。
+  WEB_FILE_MANAGER_DENIED_PATHS:
+    name: 文件管理器禁止路径
+    description: 禁止访问的路径（逗号分隔），优先级高于允许路径。
+  WEB_NOTIFICATION:
+    name: 网页通知
+    description: 设为 1 时开启桌面通知（需要 HTTPS）。
+  WEB_TERMINAL:
+    name: 网页终端
+    description: 设为 1 时开启网页终端（建议使用 HTTPS）。
+  WEB_AUTHENTICATION:
+    name: 网页认证
+    description: 设为 1 时网页界面启用登录页保护（需要 HTTPS）。
+  WEB_AUTHENTICATION_TOKEN_VALIDITY_TIME:
+    name: 登录令牌有效期（小时）
+    description: 登录令牌有效期，单位小时。
+  WEB_AUTHENTICATION_USERNAME:
+    name: 登录用户名
+    description: 网页认证用户名（可选）。
+  WEB_AUTHENTICATION_PASSWORD:
+    name: 登录密码
+    description: 网页认证密码（可选）。
+  SECURE_CONNECTION:
+    name: 安全连接
+    description: 设为 1 时启用 HTTPS 与加密 VNC。
+  SECURE_CONNECTION_VNC_METHOD:
+    name: VNC 加密方式
+    description: 加密 VNC 连接方式（SSL 或 TLS）。
+  SECURE_CONNECTION_CERTS_CHECK_INTERVAL:
+    name: 证书检查间隔（秒）
+    description: 检查证书变化的间隔秒数（0 表示不检查）。
+  WEB_LOCALHOST_ONLY:
+    name: 仅本机访问（Web）
+    description: 设为 1 时仅允许 localhost 访问网页界面。
+  VNC_LOCALHOST_ONLY:
+    name: 仅本机访问（VNC）
+    description: 设为 1 时仅允许 localhost 访问 VNC。
+  WEB_LISTENING_PORT:
+    name: Web 监听端口
+    description: 网页服务使用的容器内部端口（-1 禁用网页界面）。
+  VNC_LISTENING_PORT:
+    name: VNC 监听端口
+    description: VNC 服务使用的容器内部端口（-1 禁用 VNC）。
+  VNC_PASSWORD:
+    name: VNC 密码
+    description: 连接 VNC 所需的密码。
+  ENABLE_CJK_FONT:
+    name: 安装 CJK 字体
+    description: 设为 1 时安装中日韩字体支持。
+  CHROMIUM_APP_URL:
+    name: Chromium 应用 URL
+    description: 以应用模式启动的 URL（无标签/地址栏的精简窗口）。
+network:
+  5800/tcp: Chromium 网页界面（Ingress 不需要暴露端口）
+  5900/tcp: Chromium VNC（Ingress 不需要暴露端口）

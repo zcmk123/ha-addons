@@ -1,0 +1,89 @@
+name: "Chromium"
+version: "1.0.0"
+slug: "chromium"
+panel_icon: "mdi:google-chrome"
+description: Docker container for Chromium (jlesage)
+url: "https://github.com/zcmk123/ha-addons/tree/main/chromium"
+arch:
+  - aarch64
+  - amd64
+init: false
+apparmor: false
+panel_admin: false
+map:
+  - share:rw
+ingress: true
+ingress_port: 5800
+ports:
+  5800/tcp: null
+  5900/tcp: null
+environment:
+  USER_ID: "0"
+  KEEP_APP_RUNNING: "1"
+devices:
+  - /dev/snd
+# Map a working PulseAudio setup into the container
+audio: true
+legacy: true
+options:
+  UMASK: "0022"
+  LANG: "zh_CN.UTF-8"
+  TZ: "Asia/Shanghai"
+  APP_NICENESS: "0"
+  INSTALL_PACKAGES: ""
+  PACKAGES_MIRROR: ""
+  CONTAINER_DEBUG: "0"
+  DISPLAY_WIDTH: "1920"
+  DISPLAY_HEIGHT: "1080"
+  DARK_MODE: "0"
+  WEB_AUDIO: "1"
+  WEB_FILE_MANAGER: "0"
+  WEB_FILE_MANAGER_ALLOWED_PATHS: "AUTO"
+  WEB_FILE_MANAGER_DENIED_PATHS: ""
+  WEB_NOTIFICATION: "0"
+  WEB_TERMINAL: "0"
+  WEB_AUTHENTICATION: "0"
+  WEB_AUTHENTICATION_TOKEN_VALIDITY_TIME: "24"
+  WEB_AUTHENTICATION_USERNAME: ""
+  WEB_AUTHENTICATION_PASSWORD: ""
+  SECURE_CONNECTION: "0"
+  SECURE_CONNECTION_VNC_METHOD: "SSL"
+  SECURE_CONNECTION_CERTS_CHECK_INTERVAL: "60"
+  WEB_LOCALHOST_ONLY: "0"
+  VNC_LOCALHOST_ONLY: "0"
+  WEB_LISTENING_PORT: "5800"
+  VNC_LISTENING_PORT: "5900"
+  VNC_PASSWORD: ""
+  ENABLE_CJK_FONT: "1"
+  CHROMIUM_APP_URL: ""
+schema:
+  UMASK: str
+  LANG: str
+  TZ: str
+  APP_NICENESS: str
+  INSTALL_PACKAGES: str
+  PACKAGES_MIRROR: str
+  CONTAINER_DEBUG: str
+  DISPLAY_WIDTH: str
+  DISPLAY_HEIGHT: str
+  DARK_MODE: str
+  WEB_AUDIO: str
+  WEB_FILE_MANAGER: str
+  WEB_FILE_MANAGER_ALLOWED_PATHS: str
+  WEB_FILE_MANAGER_DENIED_PATHS: str
+  WEB_NOTIFICATION: str
+  WEB_TERMINAL: str
+  WEB_AUTHENTICATION: str
+  WEB_AUTHENTICATION_TOKEN_VALIDITY_TIME: str
+  WEB_AUTHENTICATION_USERNAME: str
+  WEB_AUTHENTICATION_PASSWORD: password
+  SECURE_CONNECTION: str
+  SECURE_CONNECTION_VNC_METHOD: str
+  SECURE_CONNECTION_CERTS_CHECK_INTERVAL: str
+  WEB_LOCALHOST_ONLY: str
+  VNC_LOCALHOST_ONLY: str
+  WEB_LISTENING_PORT: str
+  VNC_LISTENING_PORT: str
+  VNC_PASSWORD: password
+  ENABLE_CJK_FONT: str
+  CHROMIUM_APP_URL: str

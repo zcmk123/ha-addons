@@ -1,0 +1,4 @@
+# https://developers.home-assistant.io/docs/add-ons/repository#repository-configuration
+name: DoubleBird's Home Assistant Add-ons
+url: 'https://github.com/zcmk123/ha-addons'
+maintainer: DoubleBird

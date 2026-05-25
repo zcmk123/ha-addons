@@ -1,0 +1,94 @@
+configuration:
+  UMASK:
+    name: Umask
+    description: Umask for newly created files and folders (octal notation).
+  LANG:
+    name: Locale
+    description: "Container locale (example: en_US.UTF-8)."
+  TZ:
+    name: Timezone
+    description: Timezone used by the container.
+  APP_NICENESS:
+    name: App Niceness
+    description: "Application process niceness (-20..19). Negative values require extra permissions."
+  INSTALL_PACKAGES:
+    name: Install Packages
+    description: Space-separated list of packages to install during startup.
+  PACKAGES_MIRROR:
+    name: Packages Mirror
+    description: Mirror to use when installing packages.
+  CONTAINER_DEBUG:
+    name: Container Debug
+    description: "When set to 1, enables debug logging."
+  DISPLAY_WIDTH:
+    name: Display Width
+    description: Width (in pixels) of the application's window.
+  DISPLAY_HEIGHT:
+    name: Display Height
+    description: Height (in pixels) of the application's window.
+  DARK_MODE:
+    name: Dark Mode
+    description: "When set to 1, enables dark mode."
+  WEB_AUDIO:
+    name: Web Audio
+    description: "When set to 1, enables audio playback through the web interface."
+  WEB_FILE_MANAGER:
+    name: Web File Manager
+    description: "When set to 1, enables the web file manager."
+  WEB_FILE_MANAGER_ALLOWED_PATHS:
+    name: File Manager Allowed Paths
+    description: Comma-separated list of allowed paths, AUTO for common folders, ALL for no restrictions.
+  WEB_FILE_MANAGER_DENIED_PATHS:
+    name: File Manager Denied Paths
+    description: Comma-separated list of denied paths (takes precedence over allowed paths).
+  WEB_NOTIFICATION:
+    name: Web Notifications
+    description: "When set to 1, enables desktop notifications (requires HTTPS)."
+  WEB_TERMINAL:
+    name: Web Terminal
+    description: "When set to 1, enables the web terminal (recommended to use HTTPS)."
+  WEB_AUTHENTICATION:
+    name: Web Authentication
+    description: "When set to 1, protects the web UI with a login page (requires HTTPS)."
+  WEB_AUTHENTICATION_TOKEN_VALIDITY_TIME:
+    name: Auth Token Validity (Hours)
+    description: Lifetime of the web authentication token in hours.
+  WEB_AUTHENTICATION_USERNAME:
+    name: Auth Username
+    description: Optional username for web authentication.
+  WEB_AUTHENTICATION_PASSWORD:
+    name: Auth Password
+    description: Optional password for web authentication.
+  SECURE_CONNECTION:
+    name: Secure Connection
+    description: "When set to 1, enables HTTPS and encrypted VNC."
+  SECURE_CONNECTION_VNC_METHOD:
+    name: Secure VNC Method
+    description: Method used for encrypted VNC connections (SSL or TLS).
+  SECURE_CONNECTION_CERTS_CHECK_INTERVAL:
+    name: Certs Check Interval (Seconds)
+    description: Interval in seconds to check for certificate changes (0 disables).
+  WEB_LOCALHOST_ONLY:
+    name: Web Localhost Only
+    description: "When set to 1, allows web connections only from localhost."
+  VNC_LOCALHOST_ONLY:
+    name: VNC Localhost Only
+    description: "When set to 1, allows VNC connections only from localhost."
+  WEB_LISTENING_PORT:
+    name: Web Listening Port
+    description: Internal port used by the web server (-1 disables web UI).
+  VNC_LISTENING_PORT:
+    name: VNC Listening Port
+    description: Internal port used by the VNC server (-1 disables VNC).
+  VNC_PASSWORD:
+    name: VNC Password
+    description: Password required to connect via VNC.
+  ENABLE_CJK_FONT:
+    name: Enable CJK Font
+    description: "When set to 1, installs a font with Chinese/Japanese/Korean support."
+  CHROMIUM_APP_URL:
+    name: Chromium App URL
+    description: URL to launch in app mode (minimal window without tabs/address bar).
+network:
+  5800/tcp: Chromium via Web (Not required for Ingress)
+  5900/tcp: Chromium via VNC (Not required for Ingress)
