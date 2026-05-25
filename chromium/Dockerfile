@@ -1,4 +1,4 @@
-FROM jlesage/chromium:v26.04.1
+FROM jlesage/chromium:latest
 
 COPY rootfs/startapp.sh /startapp.sh
 # Makes sure that the line endings are correct
