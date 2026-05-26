@@ -4,6 +4,10 @@
 
 这个仓库包含由 DoubleBird 维护的 Home Assistant 加载项（Add-ons）。
 
+## 一键添加仓库
+
+[![打开 Home Assistant 并添加此仓库。](https://my.home-assistant.io/badges/supervisor_add_addon_repository.svg)](https://my.home-assistant.io/redirect/supervisor_add_addon_repository/?repository_url=https%3A%2F%2Fgithub.com%2Fzcmk123%2Fha-addons)
+
 ## 安装方法
 
 1. 在 Home Assistant 中进入：**设置** → **加载项** → **加载项商店**。

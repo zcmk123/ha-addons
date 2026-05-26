@@ -2,7 +2,11 @@
 
 [中文说明](./README.zh-CN.md)
 
-Chromium browser exposed through a web-based GUI (Ingress supported). This add-on is based on the `jlesage/chromium` container image.
+Chromium browser exposed through a web-based GUI (Ingress supported). This add-on is based on the [jlesage/chromium](https://github.com/jlesage/docker-chromium) container image.
+
+## Install
+
+[![Open your Home Assistant instance and show the add-on repository.](https://my.home-assistant.io/badges/supervisor_addon.svg)](https://my.home-assistant.io/redirect/supervisor_addon/?addon=chromium&repository_url=https%3A%2F%2Fgithub.com%2Fzcmk123%2Fha-addons)
 
 ## Usage
 

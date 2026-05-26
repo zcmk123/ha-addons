@@ -2,7 +2,11 @@
 
 [English](./README.md)
 
-通过 Web 图形界面使用 Chromium 浏览器（支持 Ingress）。本加载项基于 `jlesage/chromium` 容器镜像。
+通过 Web 图形界面使用 Chromium 浏览器（支持 Ingress）。本加载项基于 [jlesage/chromium](https://github.com/jlesage/docker-chromium) 容器镜像。
+
+## 安装
+
+[![打开 Home Assistant 并显示该加载项。](https://my.home-assistant.io/badges/supervisor_addon.svg)](https://my.home-assistant.io/redirect/supervisor_addon/?addon=fd7c77f4_chromium&repository_url=https%3A%2F%2Fgithub.com%2Fzcmk123%2Fha-addons)
 
 ## 使用方法
 
@@ -21,7 +25,7 @@
 
 ## 配置项
 
-本加载项将 `jlesage/chromium` 的常用环境变量以加载项配置的形式提供。
+本加载项将 [jlesage/chromium](https://github.com/jlesage/docker-chromium) 的常用环境变量以加载项配置的形式提供。
 
 常用配置示例：
 
